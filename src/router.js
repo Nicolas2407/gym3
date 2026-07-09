@@ -1,40 +1,41 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from "vue-router";
 
-import Login from './pages/login.vue'
-import HomePage from './pages/homepage.vue'
-import EspaldaPage from './pages/Espalda.vue'
-import BrazosPage from './pages/Brazos.vue'
-import PiernasPage from './pages/Piernas.vue'
-import PechoPage from './pages/Pecho.vue'
+import HomePage from "./pages/HomePage.vue";
+import Espalda from "./pages/Espalda.vue";
+import Brazos from "./pages/Brazos.vue";
+import Piernas from "./pages/Piernas.vue";
+import Pecho from "./pages/Pecho.vue";
 
 const routes = [
   {
-    path: '/',
-    component: Login
-  },
-  {
-    path: '/home',
+    path: "/",
     component: HomePage
   },
   {
-    path: '/espalda',
-    component: EspaldaPage
+    path: "/home",
+    component: HomePage
   },
   {
-    path: '/brazos',
-    component: BrazosPage
+    path: "/espalda",
+    component: Espalda
   },
   {
-    path: '/piernas',
-    component: PiernasPage
+    path: "/brazos",
+    component: Brazos
   },
   {
-    path: '/pecho',
-    component: PechoPage
+    path: "/piernas",
+    component: Piernas
+  },
+  {
+    path: "/pecho",
+    component: Pecho
   }
-]
+];
 
-export default createRouter({
+const router = createRouter({
   history: createWebHashHistory(),
   routes
-})
+});
+
+export default router;
