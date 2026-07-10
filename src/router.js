@@ -7,35 +7,37 @@ import Piernas from "./pages/Piernas.vue";
 import Pecho from "./pages/Pecho.vue";
 
 const routes = [
-  {
-    path: "/",
-    component: HomePage
-  },
-  {
-    path: "/home",
-    component: HomePage
-  },
-  {
-    path: "/espalda",
-    component: Espalda
-  },
-  {
-    path: "/brazos",
-    component: Brazos
-  },
-  {
-    path: "/piernas",
-    component: Piernas
-  },
-  {
-    path: "/pecho",
-    component: Pecho
-  }
+  { path: "/", component: HomePage },
+  { path: "/espalda", component: Espalda },
+  { path: "/brazos", component: Brazos },
+  { path: "/piernas", component: Piernas },
+  { path: "/pecho", component: Pecho },
 ];
 
-const router = createRouter({
+export default createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
 });
+const routes = [
+  {
+    path: '/home',
+    component: HomePage
+  },
+  {
+    path: '/espalda',
+    component: EspaldaPage
+  },
+  {
+    path: '/brazos',
+    component: BrazosPage
+  },
+  {
+    path: '/piernas',
+    component: PiernasPage
+  },
+  {
+    path: '/pecho',
+    component: PechoPage
+  }
+]
 
-export default router;
