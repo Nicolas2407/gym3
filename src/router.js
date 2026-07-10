@@ -14,30 +14,9 @@ const routes = [
   { path: "/pecho", component: Pecho },
 ];
 
-export default createRouter({
+const router = createRouter({
   history: createWebHashHistory(),
   routes,
 });
-const routes = [
-  {
-    path: '/home',
-    component: HomePage
-  },
-  {
-    path: '/espalda',
-    component: EspaldaPage
-  },
-  {
-    path: '/brazos',
-    component: BrazosPage
-  },
-  {
-    path: '/piernas',
-    component: PiernasPage
-  },
-  {
-    path: '/pecho',
-    component: PechoPage
-  }
-]
 
+export default router;
