@@ -16,7 +16,7 @@ const ejercicios = ref([
   {
     nombre: "Press de Banca Plano",
     imagen: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=600&auto=format&fit=crop",
-    video: "https://www.youtube.com/embed/N5aDUILKJoo", // Video real de press plano
+    video: "https://www.youtube.com/embed/N5aDUILKJoo", 
     series: 4,
     repeticiones: "6-8",
     descansoOriginal: 120,
@@ -28,7 +28,7 @@ const ejercicios = ref([
   {
     nombre: "Press Inclinado c/ Mancuernas",
     imagen: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=600&auto=format&fit=crop",
-    video: "https://www.youtube.com/embed/8eOILPv5k4o", // Video real de cruce/presiones pectoral
+    video: "https://www.youtube.com/embed/8eOILPv5k4o", 
     series: 4,
     repeticiones: "10-12",
     descansoOriginal: 90,
@@ -40,7 +40,7 @@ const ejercicios = ref([
   {
     nombre: "Aperturas (Decline Cable Fly)",
     imagen: "https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=600&auto=format&fit=crop",
-    video: "https://www.youtube.com/embed/TR4FdOs_7PY", // Video real de aperturas
+    video: "https://www.youtube.com/embed/TR4FdOs_7PY", 
     series: 3,
     repeticiones: "12-15",
     descansoOriginal: 60,
@@ -52,7 +52,7 @@ const ejercicios = ref([
   {
     nombre: "Cruce de Poleas",
     imagen: "https://images.unsplash.com/photo-1533681436303-34e262174151?q=80&w=600&auto=format&fit=crop",
-    video: "https://www.youtube.com/embed/8eOILPv5k4o", // Cruces de polea bajo/medio
+    video: "https://www.youtube.com/embed/8eOILPv5k4o", 
     series: 4,
     repeticiones: "12-15",
     descansoOriginal: 60,
@@ -94,7 +94,7 @@ const manejarEntrenamiento = (ejercicio) => {
 const forzarTerminarDescanso = (ejercicio) => {
   clearInterval(ejercicio.intervalo)
   ejercicio.estado = 'inicio'
-  ejercicio.tiempoRestante = ejercicio.descansoOriginal
+  ejercicio.tiempoRestante = e.descansoOriginal
 }
 </script>
 
@@ -130,23 +130,23 @@ const forzarTerminarDescanso = (ejercicio) => {
         <div class="row-parametros">
           <div class="col-parametro">
             <span class="label-param">SERIES</span>
-            <input type="number" v-model.number="e.series" class="input-editable num-amarillo" min="0" />
+            <input type="number" v-model.number="e.series" class="input-editable num-amarillo" min="0"></input>
           </div>
           <div class="col-parametro">
             <span class="label-param">REPS</span>
-            <input type="text" v-model="e.repeticiones" class="input-editable num-amarillo" />
+            <input type="text" v-model="e.repeticiones" class="input-editable num-amarillo"></input>
           </div>
           <div class="col-parametro">
             <span class="label-param">REST (s)</span>
             <div v-if="e.estado === 'descanso'" class="timer-display timer-active">
               <span class="valor-param font-mono text-red">{{ e.tiempoRestante }}s</span>
             </div>
-            <input v-else type="number" v-model.number="e.descansoOriginal" @input="actualizarDescansoBase(e)" class="input-editable text-white font-mono" min="0" />
+            <input v-else type="number" v-model.number="e.descansoOriginal" @input="actualizarDescansoBase(e)" class="input-editable text-white font-mono" min="0"></input>
           </div>
         </div>
 
         <div class="contenedor-media" @click="abrirVideo(e.video)">
-          <img :src="e.imagen" :alt="e.nombre" class="img-referencia" />
+          <img :src="e.imagen" :alt="e.nombre" class="img-referencia"></img>
           <div class="overlay-play">
             <div class="circulo-play">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="36" height="36">
@@ -163,13 +163,12 @@ const forzarTerminarDescanso = (ejercicio) => {
       </div>
     </div>
 
-    <!-- MODAL DE QUASAR PARA EL VIDEO -->
     <q-dialog v-model="mostrarModalVideo" backdrop-filter="blur(4px)">
       <q-card style="width: 700px; max-width: 90vw; background: #171717; border: 1px solid #e2b356; border-radius: 12px;">
         <q-card-section class="row items-center q-pb-none">
           <div class="text-h6 text-white text-weight-bold">Video de Referencia</div>
-          <q-space />
-          <q-btn icon="close" flat round dense v-close-popup color="white" />
+          <q-space></q-space>
+          <q-btn icon="close" flat round dense v-close-popup color="white"></q-btn>
         </q-card-section>
         <q-card-section class="q-pa-md">
           <div class="contenedor-iframe">
